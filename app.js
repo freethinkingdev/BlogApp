@@ -10,6 +10,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var about = require('./routes/about');
 var contact = require('./routes/contact');
+var error = require('./routes/error');
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/about', about);
 app.use('/contact', contact);
+app.use('/*', error);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -48,15 +50,16 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-/* Database setup with mongo */
+/* Database setup with mongodb */
+/* Creating database schema and model */
 mongoose.connect("mongodb://localhost/BlogApi");
-//global.campsitesSchema = new mongoose.Schema({
+//global.blogAppSchema = new mongoose.Schema({
 // title:String,
 // body: String,
-// image:String,
-// created: Date
+// image:{type: String, default: 'http://www.northvets.co.nz/wp-content/uploads/2015/07/kitten-250x250.jpg'},
+// created: {type:Date, default: Date.now}
 // });
-//global.Campsite = mongoose.model("Campsite", campsitesSchema);
+//global.BlogApi = mongoose.model("BlogApi", blogAppSchema);
 
 
 
