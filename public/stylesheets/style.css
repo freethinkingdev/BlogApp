@@ -1,12 +1,16 @@
 body {
     /*padding: 50px;*/
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     color: #383838;
     background-color: #f7f7f7;
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
+    margin: 0;
 }
 
+html {
+    margin: 0;
+}
 a {
     color: #383838;
 }
