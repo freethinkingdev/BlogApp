@@ -1,17 +1,23 @@
 <% include partials/header %>
 
 <p>Welcome to <%= title %></p>
-<% postArray.forEach(function(post){ %>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam dignissimos ducimus eum exercitationem,
+    expedita incidunt maxime obcaecati odio perspiciatis quisquam reprehenderit sed. Aliquid eum id labore praesentium
+    tenetur unde.</p>
 <div class="row">
-    <div class="col-lg-4 col-md-6 col-xs-12">
-        <h2 class="campgroundDetailHeader"><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
-        <h6><em>Created: <%= post.created %></em></h6>
-        <img title="<%= post.title %>" alt="<%= post.title %>" src="<%= post.image %>"/>
-        <p class="textTypo"><%= post.body %></p>
+    <% postArray.forEach(function(post){ %>
+    <div class="col-lg-4 col-sm-6 col-xs-12 ">
+        <div class="thumbnail">
+            <h2 class="campgroundDetailHeader"><a href="/post/<%= post.id %>"><%= post.title.substring(0, 10) %>...</a>
+            </h2>
+            <h6><em>Created: <%= post.created %></em></h6>
+            <img title="<%= post.title %>" alt="<%= post.title %>" src="<%= post.image %>"/>
+            <p class="textTypo"><%= post.body.substring(0, 30) %>...</p>
+        </div>
     </div>
-</div>
 
 <% }) %>
+</div>
 
-<a class="btn btn-block btn-primary" href="/new">Create new post</a>
+<a class="btn btn-block btn-primary" href="/posts/new">Create new post</a>
 <% include partials/footer %>

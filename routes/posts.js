@@ -17,4 +17,26 @@ router.get('/', function (req, res, next) {
     });
 });
 
+
+router.post('/', function (req, res, next) {
+
+    var postTitle = req.body.postTitle;
+    var postBody = req.body.postBody;
+    var postImageUrl = req.body.postImage;
+
+    BlogApi.create({
+            title: postTitle,
+            body: postBody,
+            image: postImageUrl
+        },
+        function (err, result) {
+            if (err) {
+                console.log(err)
+            } else {
+                console.log("Item added");
+                res.redirect("/posts")
+            }
+        });
+});
+
 module.exports = router;
