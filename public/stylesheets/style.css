@@ -24,17 +24,6 @@ footer {
 
 }
 
-.addNewSiteToTheListLink {
-    margin-bottom: 80px;
-    font-size: 1.5em;
-    width: 35%;
-    transition: all 0.05s;
-}
-
-.addNewCampSiteForm {
-    width: 70%;
-}
-
 .textTypo {
     font-size: 1.3em;
     font-family: 'Quicksand', sans-serif;
