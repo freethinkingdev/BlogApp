@@ -1,0 +1,10 @@
+<% include partials/header %>
+
+<p>Welcome to <%= title %></p>
+<% postArray.forEach(function(post){ %>
+<h2 class="campgroundDetailHeader"><%= post.title %></h2>
+<h6><em>Created: <%= post.created %></em></h6>
+<img title="<%= post.title %>" alt="<%= post.title %>" src="<%= post.image %>"/>
+<p class="textTypo"><%= post.body %></p>
+<% }) %>
+<% include partials/footer %>

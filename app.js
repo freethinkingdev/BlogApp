@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 var index = require('./routes/index');
+var posts = require('./routes/posts');
 var users = require('./routes/users');
 var about = require('./routes/about');
 var contact = require('./routes/contact');
@@ -27,6 +28,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/posts', posts);
 app.use('/users', users);
 app.use('/about', about);
 app.use('/contact', contact);
@@ -53,14 +55,24 @@ app.use(function(err, req, res, next) {
 /* Database setup with mongodb */
 /* Creating database schema and model */
 mongoose.connect("mongodb://localhost/BlogApi");
-//global.blogAppSchema = new mongoose.Schema({
-// title:String,
-// body: String,
-// image:{type: String, default: 'http://www.northvets.co.nz/wp-content/uploads/2015/07/kitten-250x250.jpg'},
-// created: {type:Date, default: Date.now}
-// });
-//global.BlogApi = mongoose.model("BlogApi", blogAppSchema);
-
+global.blogAppSchema = new mongoose.Schema({
+    title: String,
+    body: String,
+    image: {type: String, default: 'http://www.northvets.co.nz/wp-content/uploads/2015/07/kitten-250x250.jpg'},
+    created: {type: Date, default: Date.now}
+});
+global.BlogApi = mongoose.model("BlogApi", blogAppSchema);
+/*BlogApi.create({
+ title:"Nice sun today",
+ body:"It is nice to have such view right before bed",
+ image:"https://s3-media4.fl.yelpcdn.com/bphoto/weQisgb-ThHYj6MgKiOlDQ/ls.jpg"
+ }, function (err, result) {
+ if(err)
+ {
+ console.log(err)
+ } else {
+ console.log("Item added")}}
+ );*/
 
 
 module.exports = app;

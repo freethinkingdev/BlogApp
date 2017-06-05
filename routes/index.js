@@ -3,10 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', {
-      title: 'My Blog App',
-    author: 'Pimpek Max'
-  });
+    res.redirect('/posts');
 });
 
 module.exports = router;
