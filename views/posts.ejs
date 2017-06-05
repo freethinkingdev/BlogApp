@@ -2,9 +2,16 @@
 
 <p>Welcome to <%= title %></p>
 <% postArray.forEach(function(post){ %>
-<h2 class="campgroundDetailHeader"><%= post.title %></h2>
-<h6><em>Created: <%= post.created %></em></h6>
-<img title="<%= post.title %>" alt="<%= post.title %>" src="<%= post.image %>"/>
-<p class="textTypo"><%= post.body %></p>
+<div class="row">
+    <div class="col-lg-4 col-md-6 col-xs-12">
+        <h2 class="campgroundDetailHeader"><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
+        <h6><em>Created: <%= post.created %></em></h6>
+        <img title="<%= post.title %>" alt="<%= post.title %>" src="<%= post.image %>"/>
+        <p class="textTypo"><%= post.body %></p>
+    </div>
+</div>
+
 <% }) %>
+
+<a class="btn btn-block btn-primary" href="/new">Create new post</a>
 <% include partials/footer %>
