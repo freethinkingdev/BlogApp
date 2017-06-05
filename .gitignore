@@ -297,3 +297,7 @@ typings/
 
 # Docs
 docs/
+
+
+./idea/misc.xml
+./idea/workspace.xml
