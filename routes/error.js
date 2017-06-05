@@ -3,9 +3,10 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('contact', {
-        title: "Write to me",
-        author: "Pimpek Max"
+    res.render('error', {
+        title: "Error",
+        author: "Pimpalek Max",
+        message: "This is One Big Fat Error"
     });
 });
 
