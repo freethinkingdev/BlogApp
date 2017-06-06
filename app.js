@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/posts', posts);
 app.use('/posts/new', postsnew);
-app.use('/post/:id', postsshow);
+app.use('/posts/:id', postsshow);
 app.use('/users', users);
 app.use('/about', about);
 app.use('/contact', contact);

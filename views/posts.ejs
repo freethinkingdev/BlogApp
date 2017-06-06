@@ -14,11 +14,11 @@
     <!--<div class="thumbnail">-->
 <div class="ui main text container segment">
     <div class="ui huge header">
-        <a href="/post/<%= post.id %>"><%= post.title.substring(0, 20) %>...</a>
+        <a href="/posts/<%= post.id %>"><%= post.title.substring(0, 20) %>...</a>
     </div>
     <div class="ui containter">
 
-        <h6><em>Created: <%= post.created %></em></h6>
+        <h6><em>Posted: <%= post.created %></em></h6>
         <div><img height="250" width="250" class="ui centered medium bordered image rounded" title="<%= post.title %>"
                   alt="<%= post.title %>"
                   src="<%= post.image %>"/></div>
