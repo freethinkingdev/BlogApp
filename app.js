@@ -9,6 +9,7 @@ var mongoose = require('mongoose');
 var index = require('./routes/index');
 var posts = require('./routes/posts');
 var postsnew = require('./routes/postsnew');
+var postsshow = require('./routes/postsshow');
 var users = require('./routes/users');
 var about = require('./routes/about');
 var contact = require('./routes/contact');
@@ -28,9 +29,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/* Assigning usr path to a particular routes */
 app.use('/', index);
 app.use('/posts', posts);
 app.use('/posts/new', postsnew);
+app.use('/post/:id', postsshow);
 app.use('/users', users);
 app.use('/about', about);
 app.use('/contact', contact);

@@ -17,7 +17,7 @@ router.get('/', function (req, res, next) {
     });
 });
 
-
+/* POST creates new post item*/
 router.post('/', function (req, res, next) {
 
     var postTitle = req.body.postTitle;

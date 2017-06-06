@@ -1,0 +1,26 @@
+<% include partialssemanticui/header %>
+
+<div class="marginTop">
+    <div class="ui main text container segment">
+        <div class="ui huge header">
+            <h1><%= post.title %></h1>
+        </div>
+        <div class="ui containter">
+
+            <h6><em>Created: <%= post.created %></em></h6>
+            <div><img class="ui fluid bordered image rounded" title="<%= post.title %>" alt="<%= post.title %>"
+                      src="<%= post.image %>"/></div>
+            <p class="textTypo"><%= post.body %></p>
+        </div>
+
+        <div class="ui  grid">
+            <div class="eight wide column"><a class="ui fluid large orange basic button" href="/posts/id/edit">Edit</a>
+            </div>
+            <div class="eight wide column"><a class="ui fluid large red basic button "
+                                              href="/posts/id/remove">Remove</a></div>
+        </div>
+
+
+    </div>
+</div>
+<% include partialssemanticui/footer %>

@@ -19,7 +19,8 @@
     <div class="ui containter">
 
         <h6><em>Created: <%= post.created %></em></h6>
-        <div><img class="ui medium bordered image rounded" title="<%= post.title %>" alt="<%= post.title %>"
+        <div><img height="250" width="250" class="ui centered medium bordered image rounded" title="<%= post.title %>"
+                  alt="<%= post.title %>"
                   src="<%= post.image %>"/></div>
         <div class="ui text container"><p class="textTypo"><%= post.body.substring(0, 50) %>...</p></div>
         <!--</div>-->
