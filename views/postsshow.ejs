@@ -1,13 +1,13 @@
 <% include partialssemanticui/header %>
 
 <div class="marginTop">
-    <div class="ui main text container segment">
+    <div class="ui  text container segment">
         <div class="ui huge header">
             <h1><%= post.title %></h1>
         </div>
         <div class="ui containter">
 
-            <h6><em>Created: <%= post.created %></em></h6>
+            <h6><em>Created: <%= post.created.toDateString() %></em></h6>
             <div><img class="ui fluid bordered image rounded" title="<%= post.title %>" alt="<%= post.title %>"
                       src="<%= post.image %>"/></div>
             <p class="textTypo"><%= post.body %></p>

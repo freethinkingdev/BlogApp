@@ -18,7 +18,7 @@
     </div>
     <div class="ui containter">
 
-        <h6><em>Posted: <%= post.created %></em></h6>
+        <h6><em>Posted: <%= post.created.toDateString() %></em></h6>
         <div><img height="250" width="250" class="ui centered medium bordered image rounded" title="<%= post.title %>"
                   alt="<%= post.title %>"
                   src="<%= post.image %>"/></div>
