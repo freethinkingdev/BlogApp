@@ -1,8 +1,8 @@
-<% include partials/header %>
+<% include partialssemanticui/header %>
 
 <h2>Add new post below....</h2>
 
-<form action="/posts" method="post">
+<!--<form action="/posts" method="post">
     <div class="form-group">
         <input required type="text" name="postTitle" placeholder="post title" class="form-control"/>
     </div>
@@ -18,6 +18,24 @@
     <div class="form-group">
         <button class="btn btn-primary btn-block">Save post</button>
     </div>
+</form>-->
+
+<form class="ui form" action="/posts" method="post">
+    <div class="field">
+        <input required type="text" name="postTitle" placeholder="post title"/>
+    </div>
+
+    <div class="field">
+        <textarea required type="text" name="postBody" placeholder="post"></textarea>
+    </div>
+
+    <div class="field">
+        <input required type="text" name="postImage" placeholder="post image url"/>
+    </div>
+
+    <div class="field">
+        <button class="fluid ui primary button">Save post</button>
+    </div>
 </form>
 
-<% include partials/footer %>
+<% include partialssemanticui/footer %>

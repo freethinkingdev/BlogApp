@@ -1,4 +1,4 @@
-<% include partials/header %>
+<% include partialssemanticui/header %>
 
 <p>Welcome to <%= title %></p>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam dignissimos ducimus eum exercitationem,
@@ -6,18 +6,28 @@
     tenetur unde.</p>
 <div class="row">
     <% postArray.forEach(function(post){ %>
-    <div class="col-lg-4 col-sm-6 col-xs-12 ">
-        <div class="thumbnail">
+    <!--<div class="col-lg-4 col-sm-6 col-xs-12 ">-->
+    <!--<div class="thumbnail">-->
+    <div class="ui containter">
             <h2 class="campgroundDetailHeader"><a href="/post/<%= post.id %>"><%= post.title.substring(0, 10) %>...</a>
             </h2>
             <h6><em>Created: <%= post.created %></em></h6>
-            <img title="<%= post.title %>" alt="<%= post.title %>" src="<%= post.image %>"/>
-            <p class="textTypo"><%= post.body.substring(0, 30) %>...</p>
-        </div>
+        <img class="ui medium bordered image rounded" title="<%= post.title %>" alt="<%= post.title %>"
+             src="<%= post.image %>"/>
+        <div class="ui text container"><p class="textTypo"><%= post.body.substring(0, 30) %>...</p></div>
+        <!--</div>-->
+        <!--</div>-->
     </div>
-
 <% }) %>
+
 </div>
 
-<a class="btn btn-block btn-primary" href="/posts/new">Create new post</a>
-<% include partials/footer %>
+<a class="ui fluid primary animated fade button" href="/posts/new">
+    <div class="visible content">Create new post</div>
+    <div class="hidden content">
+        <i class="fa fa-save" aria-hidden="true"></i>
+    </div>
+</a>
+
+
+<% include partialssemanticui/footer %>
