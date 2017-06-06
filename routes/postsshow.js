@@ -35,8 +35,22 @@ router.put('/', function (req, res, next) {
             if (err) {
                 res.redirect('/posts');
             } else {
-                console.log("Item updated");
+                //console.log("Item updated");
                 res.redirect("/posts/" + postId);
+            }
+        });
+});
+
+/* Delete route removing post */
+router.delete('/', function (req, res, next) {
+    var postId = req.params.id;
+    BlogApi.findByIdAndRemove(postId, {},
+        function (err) {
+            if (err) {
+                res.redirect('/');
+            } else {
+                //console.log("Item removed");
+                res.redirect("/");
             }
         });
 });
