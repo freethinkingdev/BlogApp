@@ -1,4 +1,4 @@
-var express = require('express');
+var express = require('express', {mergeParams: true});
 var router = express.Router();
 
 /* GET home page. */
@@ -38,5 +38,6 @@ router.post('/', function (req, res, next) {
             }
         });
 });
+
 
 module.exports = router;

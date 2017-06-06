@@ -19,4 +19,27 @@ router.get('/', function (req, res, next) {
 });
 
 
+/* PUT Editing current post */
+router.put('/', function (req, res, next) {
+    var postId = req.params.id;
+    var postTitle = req.body.postTitle;
+    var postBody = req.body.postBody;
+    var postImageUrl = req.body.postImage;
+
+    BlogApi.findByIdAndUpdate(postId, {
+            title: postTitle,
+            body: postBody,
+            image: postImageUrl
+        },
+        function (err, result) {
+            if (err) {
+                res.redirect('/posts');
+            } else {
+                console.log("Item updated");
+                res.redirect("/posts/" + postId);
+            }
+        });
+});
+
+
 module.exports = router;
