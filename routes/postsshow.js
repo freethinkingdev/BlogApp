@@ -18,12 +18,11 @@ router.get('/', function (req, res, next) {
     });
 });
 
-
 /* PUT Editing current post */
 router.put('/', function (req, res, next) {
     var postId = req.params.id;
-    var postTitle = req.body.postTitle;
-    var postBody = req.body.postBody;
+    var postTitle = req.sanitize(req.body.postTitle);
+    var postBody = req.sanitize(req.body.postBody);
     var postImageUrl = req.body.postImage;
 
     BlogApi.findByIdAndUpdate(postId, {
@@ -54,6 +53,5 @@ router.delete('/', function (req, res, next) {
             }
         });
 });
-
 
 module.exports = router;

@@ -20,8 +20,8 @@ router.get('/', function (req, res, next) {
 /* POST creates new post item*/
 router.post('/', function (req, res, next) {
 
-    var postTitle = req.body.postTitle;
-    var postBody = req.body.postBody;
+    var postTitle = req.sanitize(req.body.postTitle);
+    var postBody = req.sanitize(req.body.postBody);
     var postImageUrl = req.body.postImage;
 
     BlogApi.create({

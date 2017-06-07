@@ -3,27 +3,33 @@
 <div class="marginTop">
     <div class="ui  text container segment">
         <div class="ui huge header">
-            <h1><%= post.title %></h1>
+            <h1><a href="/"> <%= post.title %></a></h1>
         </div>
         <div class="ui containter">
 
             <h6><em>Created: <%= post.created.toDateString() %></em></h6>
             <div><img class="ui fluid bordered image rounded" title="<%= post.title %>" alt="<%= post.title %>"
                       src="<%= post.image %>"/></div>
-            <p class="textTypo"><%= post.body %></p>
+            <p class="textTypo"><%- post.body %></p>
         </div>
 
         <div class="ui  grid">
-            <div class="eight wide column">
+
+            <div class="five wide column">
+                <a class="ui fluid large green basic button" href="/posts">Back</a>
+            </div>
+
+            <div class="five wide column">
                 <a class="ui fluid large orange basic button" href="/posts/<%= post._id %>/edit">Edit</a>
             </div>
 
-            <div class="eight wide column">
+            <div class="five wide column">
                 <form action="/posts/<%= post.id %>?_method=DELETE" method="post">
                     <button class="ui fluid large red basic button">Remove</button>
                 </form>
                 <!--<a class="ui fluid large red basic button" href="/posts/<%= post._id %>?_method=DELETE">Remove</a>-->
             </div>
+
         </div>
 
 

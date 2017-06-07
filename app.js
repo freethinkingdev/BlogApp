@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var methodOverride = require('method-override');
+var expressSanitizer = require('express-sanitizer');
 
 var index = require('./routes/index');
 var posts = require('./routes/posts');
@@ -28,9 +29,11 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(expressSanitizer());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride("_method"));
+
 
 /* Assigning usr path to a particular routes */
 app.use('/', index);

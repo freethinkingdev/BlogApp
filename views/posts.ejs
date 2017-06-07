@@ -8,37 +8,46 @@
         tenetur unde.</p>
 </div>
 
-<!--<div class="row">-->
+
     <% postArray.forEach(function(post){ %>
-    <!--<div class="col-lg-4 col-sm-6 col-xs-12 ">-->
-    <!--<div class="thumbnail">-->
-<div class="ui main text container segment">
+<div class="ui  text container segment">
     <div class="ui huge header">
         <a href="/posts/<%= post.id %>"><%= post.title.substring(0, 20) %>...</a>
     </div>
-    <div class="ui containter">
+    <div class="ui to pattached segement">
+        <div class="ui divided items">
 
-        <h6><em>Posted: <%= post.created.toDateString() %></em></h6>
-        <div><img height="250" width="250" class="ui centered medium bordered image rounded" title="<%= post.title %>"
-                  alt="<%= post.title %>"
-                  src="<%= post.image %>"/></div>
-        <div class="ui text container"><p class="textTypo"><%= post.body.substring(0, 50) %>...</p></div>
-        <!--</div>-->
-        <!--</div>-->
+            <div class="item">
+
+                <div class="image">
+                    <img height="250" width="250" class="ui centered medium bordered image rounded"
+                         title="<%= post.title %>"
+                         alt="<%= post.title %>"
+                         src="<%= post.image %>"/>
+                </div>
+
+                <div class="content">
+                    <div class="description"><%= post.body.substring(0, 50) %>...</div>
+                    <div class="meta"><em>Posted: <%= post.created.toDateString() %></em></div>
+                </div>
+
+            </div>
+
+        </div>
+
+
     </div>
-
-
-</div>
+    </div>
 <% }) %>
+<div class="ui padded text container">
+    <a class="ui fluid primary animated fade button" href="/posts/new">
+        <div class="visible content">Create new post</div>
+        <div class="hidden content">
+            <i class="fa fa-save" aria-hidden="true"></i>
+        </div>
+    </a>
+</div>
 
-<!--</div>-->
-
-<a class="ui fluid primary animated fade button" href="/posts/new">
-    <div class="visible content">Create new post</div>
-    <div class="hidden content">
-        <i class="fa fa-save" aria-hidden="true"></i>
-    </div>
-</a>
 
 
 <% include partialssemanticui/footer %>
