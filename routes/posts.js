@@ -17,13 +17,13 @@ router.get('/', function (req, res, next) {
     });
 });
 
-/* POST creates new post item*/
+/* POST creates new post item */
 router.post('/', function (req, res, next) {
-
+    /* Getting the items from the form and sanitizing them*/
     var postTitle = req.sanitize(req.body.postTitle);
     var postBody = req.sanitize(req.body.postBody);
     var postImageUrl = req.body.postImage;
-
+    /* Creating new db entry using create method*/
     BlogApi.create({
             title: postTitle,
             body: postBody,

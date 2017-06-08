@@ -9,17 +9,18 @@
 </div>
 
 
-    <% postArray.forEach(function(post){ %>
+<!-- Got post object fron db as postArray. Using foreach function to iterate through the array -->
+<% postArray.forEach(function(post){ %>
 <div class="ui  text container segment">
     <div class="ui huge header">
+        <!-- Display short title -->
         <a href="/posts/<%= post.id %>"><%= post.title.substring(0, 20) %>...</a>
     </div>
     <div class="ui to pattached segement">
         <div class="ui divided items">
-
             <div class="item">
-
                 <div class="image">
+                    <!-- Displaying image for the post -->
                     <img height="250" width="250" class="ui centered medium bordered image rounded"
                          title="<%= post.title %>"
                          alt="<%= post.title %>"
@@ -27,18 +28,18 @@
                 </div>
 
                 <div class="content">
+                    <!-- Displaying body, which is also sortened version -->
                     <div class="description"><%= post.body.substring(0, 50) %>...</div>
+                    <!-- Some meta info. Date posted in this case -->
                     <div class="meta"><em>Posted: <%= post.created.toDateString() %></em></div>
                 </div>
-
             </div>
-
+                </div>
+            </div>
         </div>
-
-
-    </div>
-    </div>
 <% }) %>
+
+<!-- Adding button for new post creation -->
 <div class="ui padded text container">
     <a class="ui fluid primary animated fade button" href="/posts/new">
         <div class="visible content">Create new post</div>
@@ -47,7 +48,6 @@
         </div>
     </a>
 </div>
-
 
 
 <% include partialssemanticui/footer %>

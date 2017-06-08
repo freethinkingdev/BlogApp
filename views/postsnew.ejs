@@ -1,28 +1,11 @@
 <% include partialssemanticui/header %>
 
-
-<!--<form action="/posts" method="post">
-    <div class="form-group">
-        <input required type="text" name="postTitle" placeholder="post title" class="form-control"/>
-    </div>
-
-    <div class="form-group">
-        <textarea required type="text" name="postBody" placeholder="post" class="form-control"></textarea>
-    </div>
-
-    <div class="form-group">
-        <input required type="text" name="postImage" placeholder="post image url" class="form-control"/>
-    </div>
-
-    <div class="form-group">
-        <button class="btn btn-primary btn-block">Save post</button>
-    </div>
-</form>-->
 <div class="marginTop">
     <div class="ui main text container segment marginTop">
         <div class="ui huge header">
             Add new post
     </div>
+        <!-- Form that is used for adding new post to the db-->
         <form class="ui form" action="/posts" method="post">
             <div class="field">
                 <input required type="text" name="postTitle" placeholder="post title"/>

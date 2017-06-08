@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router({mergeParams: true});
 
-/* GET home page. */
+/* GET one post information page. */
 router.get('/', function (req, res, next) {
+    /* Getting post id*/
     var postId = req.params.id;
+    /* Finding post*/
     BlogApi.findById(postId, function (err, postsResults) {
         if (err) {
             console.log(err);
@@ -20,11 +22,12 @@ router.get('/', function (req, res, next) {
 
 /* PUT Editing current post */
 router.put('/', function (req, res, next) {
+    /* Getting post id and other parameters in order to update the post*/
     var postId = req.params.id;
     var postTitle = req.sanitize(req.body.postTitle);
     var postBody = req.sanitize(req.body.postBody);
     var postImageUrl = req.body.postImage;
-
+    /* Fiding and updating the post */
     BlogApi.findByIdAndUpdate(postId, {
             title: postTitle,
             body: postBody,
